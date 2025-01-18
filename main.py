@@ -7,6 +7,7 @@ import pyttsx3
 # Replace with your ESP32-CAM IP address
 ESP32_CAM_IP = "http://192.168.27.10"
 
+
 def capture_image():
     """Capture an image from the ESP32-CAM."""
     try:
@@ -28,6 +29,7 @@ def capture_image():
         print(f"An error occurred while capturing the image: {e}")
         return None
 
+
 def perform_ocr(image_path):
     """Extract text from the captured image using OCR."""
     try:
@@ -39,6 +41,7 @@ def perform_ocr(image_path):
         print(f"An error occurred during OCR: {e}")
         return ""
 
+
 def text_to_speech(text):
     """Convert extracted text to speech."""
     try:
@@ -47,6 +50,7 @@ def text_to_speech(text):
         engine.runAndWait()
     except Exception as e:
         print(f"An error occurred during text-to-speech conversion: {e}")
+
 
 def main():
     """Main workflow."""
@@ -64,6 +68,7 @@ def main():
 
     # Step 3: Convert extracted text to speech
     text_to_speech(text)
+
 
 if __name__ == "__main__":
     main()
